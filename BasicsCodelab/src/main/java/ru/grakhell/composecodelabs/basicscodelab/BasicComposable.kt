@@ -1,5 +1,6 @@
 package ru.grakhell.composecodelabs.basicscodelab
 
+import android.content.res.Configuration
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
@@ -33,7 +34,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ru.grakhell.composecodelabs.basicscodelab.ui.theme.BasicsCodelabTheme
 
 @Composable
 private fun Greeting(name: String) {
@@ -119,6 +122,38 @@ fun OnboardingScreen(onContinueClicked: () -> Unit) {
                 Text("Continue")
             }
         }
+    }
+}
+
+@Preview(
+    showBackground = true,
+    widthDp = 320,
+    name = "OnboardingPreview")
+@Composable
+fun OnboardingPreview() {
+    BasicsCodelabTheme {
+        App()
+    }
+}
+
+@Preview(showBackground = true, widthDp = 320)
+@Composable
+fun DefaultPreview() {
+    BasicsCodelabTheme {
+        Greetings()
+    }
+}
+
+@Preview(
+    showBackground = true,
+    widthDp = 320,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    name = "DefaultPreviewDark"
+)
+@Composable
+fun DefaultDarkPreview() {
+    BasicsCodelabTheme {
+        Greetings()
     }
 }
 
