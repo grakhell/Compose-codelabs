@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Compose codelabs"
 include ':app'
 include ':BasicsCodelab'
+include ':LayoutCodelab'
